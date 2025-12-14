@@ -244,6 +244,126 @@
         .nav-rapida:active {
             transform: scale(0.9);
         }
+        
+        /* Otimizações para PDF */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            
+            .container {
+                max-width: 100% !important;
+                background: white !important;
+                box-shadow: none !important;
+            }
+            
+            .header {
+                position: relative !important;
+                top: auto !important;
+                page-break-after: avoid;
+                background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .destino-header {
+                position: relative !important;
+                top: auto !important;
+                page-break-after: avoid;
+                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .destino {
+                page-break-before: auto;
+                page-break-after: auto;
+                page-break-inside: avoid;
+                border-bottom: 2px solid #e0e0e0 !important;
+            }
+            
+            .dia {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            
+            .atividade, .hospedagem, .passeio, .observacao {
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .hospedagem {
+                background: linear-gradient(135deg, #f5f0e8 0%, #ebe6de 100%) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .passeio {
+                background: linear-gradient(135deg, #e8f4f8 0%, #dceef5 100%) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .observacao {
+                background: linear-gradient(135deg, #fff9e6 0%, #fff4d6 100%) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .horario {
+                background: #ffe8a3 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .preco {
+                background: #e8f5e8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .moeda {
+                background: #f8f6f0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .atividade {
+                background: #fafafa !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .footer {
+                background: #2d2d2d !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            /* Esconde botão de navegação no PDF */
+            .nav-rapida {
+                display: none !important;
+            }
+            
+            /* Melhora qualidade de impressão */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            /* Remove sombras pesadas para melhor impressão */
+            .destino-header, .header {
+                box-shadow: none !important;
+            }
+            
+            /* Ajusta margens para PDF */
+            @page {
+                margin: 1.5cm 1cm;
+                size: A4;
+            }
+        }
     </style>
 </head>
 <body>
